@@ -25,13 +25,14 @@ frame_count = 0
 
 # 读写视频文件（仅测试过webcam输入）
 cap = choose_run_mode(args)
-video_writer = set_video_writer(cap, write_fps=int(7.0))
+video_writer = set_video_writer(cap, write_fps=int(30.0))
 
 
 # # 保存关节数据的txt文件，用于训练过程(for training)
 # f = open('origin_data.txt', 'a+')
 
-while cv.waitKey(1) < 0:
+#while cv.waitKey(1) < 0:
+while(cap.isOpened()):
     has_frame, show = cap.read()
     if has_frame:
         fps_count += 1
@@ -65,7 +66,7 @@ while cv.waitKey(1) < 0:
         time_frame_label = '[Time:{0:.2f} | Frame:{1}]'.format(run_time, frame_count)
         cv.putText(show, time_frame_label, (5, height-15), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
 
-        cv.imshow('Action Recognition based on OpenPose', show)
+        #cv.imshow('Action Recognition based on OpenPose', show)
         video_writer.write(show)
 
         # # 采集数据，用于训练过程(for training)
