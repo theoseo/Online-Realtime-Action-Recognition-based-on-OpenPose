@@ -23,6 +23,12 @@ A skeleton-based real-time online action recognition project, classifying and re
  
 ------
 ## Usage
+ - Install using miniconda `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+ ```Shell
+ conda install opencv
+ conda install scikit-learn
+ conda install pathlib
+ ```
  - Download the openpose VGG tf-model with command line `./download.sh`(/Pose/graph_models/VGG_origin) or fork [here](https://pan.baidu.com/s/1XT8pHtNP1FQs3BPHgD5f-A#list/path=%2Fsharelink1864347102-902260820936546%2Fopenpose%2Fopenpose%20graph%20model%20coco&parentPath=%2Fsharelink1864347102-902260820936546), and place it under the corresponding folder; 
  - `python main.py`, it will **start the webcam**. 
  (you can choose to test video with command `python main.py --video=test.mp4`, however I just tested the webcam mode)   
